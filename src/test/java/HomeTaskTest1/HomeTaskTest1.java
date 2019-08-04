@@ -9,7 +9,7 @@ public class HomeTaskTest1 {
     @Test
     public void intApplesPostivePassTest(){
         HomeTask1 homeTask1 = new HomeTask1();
-        int actualResult = homeTask1.intApples(5,5);
+        int actualResult = homeTask1.intApples(4,5);
         Assert.assertEquals("MissMatched",10 ,actualResult);
     }
 
