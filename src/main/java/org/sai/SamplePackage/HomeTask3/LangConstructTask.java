@@ -16,15 +16,118 @@ public class LangConstructTask {
 //            langConstructTask.greatNumSix(2,5);
 //            langConstructTask.greatNumSix(-3,-3);
 //            langConstructTask.greatNumSix(-9,3);
-            langConstructTask.party(5,5);
-            langConstructTask.party(0,5);
-            langConstructTask.party(4,8);
-            langConstructTask.party(10,5);
-            langConstructTask.party(15,10);
+//            langConstructTask.party(5,5);
+//            langConstructTask.party(0,5);
+//            langConstructTask.party(4,8);
+//            langConstructTask.party(10,5);
+//            langConstructTask.party(15,10);
 
+            langConstructTask.inOrder(1, 2, 4, false) ;
+            langConstructTask.inOrder(1, 2, 1, false);
+            langConstructTask.inOrder(1, 1, 2, true);
+
+            langConstructTask.shareDigit(12, 23);
+            langConstructTask.shareDigit(12, 43);
+            langConstructTask.shareDigit(12, 44);
 
         }
 
+/*
+Given a  string, return the length of the largest "block" in the string. A block is a  run of   adjacent chars that are the same.maxBlock("hoopla") ? 2maxBlock("abbCCCddBBBxx") ? 3maxBlock("") ? 0Test your logic at   : http://codingbat.com/prob/p1794
+ */
+
+
+    public int maxBlock(String str) {
+        int max=0;
+        int temp=1;
+        if(str.length()==1)
+            max= 1;
+        if(str.length()==0)
+            max= 0;
+        if(str.length()>1) {
+            char[] ch = str.toCharArray();
+            for (int i = 1; i < ch.length; i++) {
+                if(ch[i]==ch[i-1])
+                {temp++;
+                    if(i==ch.length-1){
+                        if(temp>max)
+                            max=temp;
+                    }}
+                else{
+                    if(temp>max)
+                        max=temp;
+                    temp=1;}
+            }
+
+        }
+        return max;
+    }
+
+
+
+
+        /*
+        Given two strings, base and remove, return a  version of the basestring where all instances of   the remove string have been removed (not case sensitive). You may assume that the remove string is length 1  or more. Remove only non-overlapping instances, so with "xxx" removing "xx" leaves "x".withoutString("Hello there", "llo") ?  "He there"withoutString("Hello there", "e") ?  "Hllo thr"withoutString("Hello there", "x") ?  "Hello there"Test your logic at   : http://codingbat.com/prob/p192570
+         */
+
+    public String withoutString(String base, String remove) {
+        remove = "(?i)"+remove;
+        return base.replaceAll(remove,"");
+
+    }
+
+/*
+Given 2  non-negative ints, a and b,   return their sum, so   long as thesum has the same number of   digits as   a.   If the sum has more digits than a,   just return a  without b.   (Note: one way to compute the number
+of   digits of   a non-negative int n  is   to   convert it to a  string withString.valueOf(n) and then check the length of the string.)sumLimit(2, 3)   ?  5sumLimit(8, 3)   ?  8sumLimit(8, 1)   ?  9Test your logic at   :http://codingbat.com/prob/p1180
+ */
+
+    public int sumLimit(int a, int b) {
+        int sum = a+b;
+        if(String.valueOf(sum).length() > String.valueOf(a).length())
+            return a;
+        return a+b;
+    }
+
+
+    /*
+        Given two ints, each in   the range 10..99, return true if   there is a digit that appears in both numbers, such as the 2  in 12   and 23. (Note: division, e.g. n/10, gives the left digit while the %  "mod" n%10 gives the right digit.)shareDigit(12, 23) ? trueshareDigit(12, 43) ? falseshareDigit(12, 44) ? falseTest your logic at   : http://codingbat.com/prob/p1537
+         */
+        public boolean shareDigit(int a, int b) {
+            if(returnLeft(a)==returnLeft(b) || returnLeft(a)==returnRight(b) || returnRight(a) == returnLeft(b) || returnRight(a)==returnRight(b))
+                return true;
+            else
+                return false;
+        }
+        private int returnLeft(int x){
+            return x/10;
+        }
+        private int returnRight(int x){
+            return x%10;
+        }
+
+
+
+        /*
+        Given three ints, a b  c, return true
+        if   b is greater than a, and c is greater than b.
+        However, with the exception that if "bOk" is   true,
+        b does not need to be   greater than a.
+        inOrder(1, 2, 4, false) ?  true
+        inOrder(1, 2, 1, false) ?  false
+        inOrder(1, 1, 2, true) ?  true
+        Test your logic at   :http://codingbat.com/prob/p1541
+         */
+        public boolean inOrder(int a, int b, int c, boolean bOk){
+            boolean bool=true;
+            if(bOk)
+            return c>b?true:false;
+            if(b>a && c>b)
+                return true;
+            else
+                return false;
+
+//            return bool;
+        }
         /*
         You have a  blue lottery ticket, with ints a, b, and c on   it.
         This makes three pairs, which we'll call ab, bc, and ac.
