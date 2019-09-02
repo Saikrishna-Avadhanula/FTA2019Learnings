@@ -1,5 +1,8 @@
 package org.sai.SamplePackage.HomeTask3;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class LangConstructTask {
 
 
@@ -22,15 +25,52 @@ public class LangConstructTask {
 //            langConstructTask.party(10,5);
 //            langConstructTask.party(15,10);
 
-            langConstructTask.inOrder(1, 2, 4, false) ;
-            langConstructTask.inOrder(1, 2, 1, false);
-            langConstructTask.inOrder(1, 1, 2, true);
+//            langConstructTask.inOrder(1, 2, 4, false) ;
+//            langConstructTask.inOrder(1, 2, 1, false);
+//            langConstructTask.inOrder(1, 1, 2, true);
+//
+//            langConstructTask.shareDigit(12, 23);
+//            langConstructTask.shareDigit(12, 43);
+//            langConstructTask.shareDigit(12, 44);
 
-            langConstructTask.shareDigit(12, 23);
-            langConstructTask.shareDigit(12, 43);
-            langConstructTask.shareDigit(12, 44);
+
+            langConstructTask.sumNumbers("abc123xyz");
+            langConstructTask.sumNumbers("aa11b33");
+            langConstructTask.sumNumbers("7 11");
+            langConstructTask.sumNumbers("Chocolate");
+            langConstructTask.sumNumbers("5hoco1a1e");
+            langConstructTask.sumNumbers("5$$1;;1!!");
 
         }
+
+        /*
+        Given a  string, return the sum of   the numbers appearing in the string, ignoring all other characters. A number is a series of 1 or more digit chars in a row. (Note: Character.isDigit(char) tests if a char is   one of   the chars '0', '1', ..   '9'. Integer.parseInt(string) converts a string to an   int.)sumNumbers("abc123xyz") ?  123sumNumbers("aa11b33") ?  44sumNumbers("7 11") ? 18Test your logic at   : http://codingbat.com/prob/p1211
+         */
+    public int sumNumbers(String str) {
+        int res=0;
+        String tempNum="";
+        char[] ch = str.toCharArray();
+        List<String> strr = new ArrayList<String>();
+        for(int i=0; i<ch.length ;i++){
+            if(Character.isDigit(ch[i])){
+                tempNum=tempNum+ch[i];
+            }
+            if(!Character.isDigit(ch[i])){
+                if(tempNum.length()>0)
+                    strr.add(tempNum);
+                tempNum="";
+            }
+        }
+        if(tempNum!="")
+            strr.add(tempNum);
+        for (int cou=0; cou<strr.size();cou++
+        ) {
+            res = res+Integer.parseInt(strr.get(cou));
+        }
+
+        return res;
+    }
+
 
 /*
 Given a  string, return the length of the largest "block" in the string. A block is a  run of   adjacent chars that are the same.maxBlock("hoopla") ? 2maxBlock("abbCCCddBBBxx") ? 3maxBlock("") ? 0Test your logic at   : http://codingbat.com/prob/p1794
