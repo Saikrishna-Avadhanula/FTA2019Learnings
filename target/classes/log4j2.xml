@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="warn">
+    <Properties>
+        <Property name="basePath">C:\\logs</Property>
+    </Properties>
+
+    <Appenders>
+
+<!--        <RollingFile name="fileLogger" fileName="${basePath}\app_${date:yyyy-MM}\app-${date:MM-dd-yyyy}.log"-->
+<!--                     filePattern="${basePath}\app_$${date:yyyy-MM}\app-%d{MM-dd-yyyy}-%i.log.gz"-->
+<!--        >-->
+
+        <RollingFile name="fileLogger" fileName="${basePath}\${date:yyyy-MM}\app-${date:MM-dd-yyyy}.log"
+                     filePattern="${basePath}\%d{yyyy-MM}\app-%d{MM-dd-yyyy}.log"
+        >
+            <PatternLayout>
+                <pattern>[%-4level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n</pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1" modulate="false" />
+                <SizeBasedTriggeringPolicy size="25 MB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="5" />
+        </RollingFile>
+
+
+        <Console name="console" target="SYSTEM_OUT">
+            <PatternLayout pattern="[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %M - %msg%n"/>
+        </Console>
+    </Appenders>
+
+    <Loggers>
+        <Logger name="TestBase" level="all" additivity="true">
+            <appender-ref ref="fileLogger" level="all"/>
+        </Logger>
+        <Root level="all" additivity="true">
+            <appender-ref ref="console"/>
+        </Root>
+    </Loggers>
+</Configuration>
