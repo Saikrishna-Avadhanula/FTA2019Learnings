@@ -6,13 +6,9 @@
 
     <Appenders>
 
-<!--        <RollingFile name="fileLogger" fileName="${basePath}\app_${date:yyyy-MM}\app-${date:MM-dd-yyyy}.log"-->
-<!--                     filePattern="${basePath}\app_$${date:yyyy-MM}\app-%d{MM-dd-yyyy}-%i.log.gz"-->
-<!--        >-->
-
         <RollingFile name="fileLogger" fileName="${basePath}\${date:yyyy-MM}\app-${date:MM-dd-yyyy}.log"
-                     filePattern="${basePath}\%d{yyyy-MM}\app-%d{MM-dd-yyyy}.log"
-        >
+                     filePattern="${basePath}\%d{yyyy-MM}\app-%d{MM-dd-yyyy}.log">
+
             <PatternLayout>
                 <pattern>[%-4level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n</pattern>
             </PatternLayout>

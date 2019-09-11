@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class ArrayStringsTask {
 /*
-    Arrays:
+    Collections:
             1. Write a program to find the missing number in integer array of 1 to 100 - 5 marks
             2. Write a program to find biggest and smallest number in a array.- 5 marks
 
