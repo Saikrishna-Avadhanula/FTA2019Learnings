@@ -8,6 +8,14 @@ public class SampleMapCollection {
         Hashtable<Integer,String> hashtable = new Hashtable<Integer, String>();
         HashMap<Integer,String>   hashMap   = new HashMap<Integer, String>();
 
+        /*
+        Hashtable are synchronised, doesn't allow null values
+        HashMaps are unsynchronised, allow null values..
+        LinkedHashMaps are unsynchronised, allows null values..
+        TreeMap are unsynchronised
+         */
+
+
         hashtable.put(1,"Avadhanula");
         hashtable.put(2,"Sai");
         hashtable.put(3,"Krishna");

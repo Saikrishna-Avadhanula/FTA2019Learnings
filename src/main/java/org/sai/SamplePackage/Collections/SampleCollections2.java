@@ -6,16 +6,17 @@ public class SampleCollections2 {
     /*
     asynchronised
     Duplicates allowed
-    ArrayList     >>>>> Dynamic array
-    LinkedList    >>>>>
+    ArrayList     >>>>> Dynamic array, index based
+    LinkedList    >>>>> follow linked data structuress, follows insertion order Queue kind
 
     Duplicates not allowed
     LinkedHashSet >>>>> Insertion order no sorting is available
     TreeSet       >>>>> stored in Ascending order, Generics should be given
-    HashSet       >>>>>
+    HashSet       >>>>> allows nulls
 
      */
     public static void main(String[] args){
+
 
         ArrayList    arrayList      = new ArrayList();
         LinkedList   linkedList     = new LinkedList();
@@ -23,15 +24,15 @@ public class SampleCollections2 {
         TreeSet     treeSet         = new TreeSet();
         HashSet     hashSet         = new HashSet();
 
-        add(arrayList);
-        add(linkedList);
-        add(linkedHashSet);
+//        add(arrayList);
+//        add(linkedList);
+//        add(linkedHashSet);
 //        add(treeSet);
         add(hashSet);
 
-        print(arrayList);
-        print(linkedList);
-        print(linkedHashSet);
+//        print(arrayList);
+//        print(linkedList);
+//        print(linkedHashSet);
 //        print(treeSet);
         print(hashSet);
 
@@ -47,6 +48,7 @@ public class SampleCollections2 {
         list.add("sai");
         list.add("SaI");
         list.add(5.5);
+        list.add(null);
 
     }
     public static void add(Set list){
