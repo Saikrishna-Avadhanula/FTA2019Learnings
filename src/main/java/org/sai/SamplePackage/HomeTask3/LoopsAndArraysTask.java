@@ -5,10 +5,80 @@ public class LoopsAndArraysTask {
 
         LoopsAndArraysTask loopsAndArraysTask = new LoopsAndArraysTask();
         int[] nums = {1, 2, 1, 1, 3};
-//        System.out.println("Res::"+loopsAndArraysTask.maxSpan(nums));
+        System.out.println("Res::"+loopsAndArraysTask.maxSpan(nums));
         System.out.println("Res::"+ loopsAndArraysTask.countClumps(nums));
 
     }
+
+
+    /*
+    5.Given two arrays of ints sorted in increasing order, outer and inner, return true if all of the numbers in inner appear in outer. The best solution makes only a single "linear" pass of both arrays, taking advantage of the fact that both arrays are already in sorted order.
+
+
+linearIn([1, 2, 4, 6], [2, 4]) → true
+linearIn([1, 2, 4, 6], [2, 3, 4]) → false
+linearIn([1, 2, 4, 4, 6], [2, 4]) → true
+
+Test your code at : http://codingbat.com/prob/p134022
+     */
+
+    public boolean linearIn(int[] outer, int[] inner) {
+        int i = 0;
+        int j = 0;
+
+        while(i < inner.length && j < outer.length) {
+            if(inner[i] > outer[j]) {
+                j++;
+            } else if(inner[i] < outer[j]) {
+                return false;
+            } else {
+                i++;
+            }
+        }
+
+        if(i != inner.length)
+            return false;
+
+        return true;
+    }
+
+
+
+
+
+    /*
+    4.We'll say that a "mirror" section in an array is a group of contiguous elements such that somewhere in the array, the same group appears in reverse order. For example, the largest mirror section in {1, 2, 3, 8, 9, 3, 2, 1} is length 3 (the {1, 2, 3} part). Return the size of the largest mirror section found in the given array.
+
+
+maxMirror([1, 2, 3, 8, 9, 3, 2, 1]) → 3
+maxMirror([1, 2, 1, 4]) → 3
+maxMirror([7, 1, 2, 9, 7, 2, 1]) → 2
+
+Test your code at : http://codingbat.com/prob/p196409
+     */
+
+    public int maxMirror(int[] nums) {
+        int max = 0;
+
+        for(int i = 0; i < nums.length; i++) {
+            int count = 0;
+            for(int j = nums.length - 1; j >= 0 && i + count < nums.length; j--) {
+                if(nums[i + count] == nums[j]) {
+                    count++;
+                } else {
+                    max = Math.max(max, count);
+                    count = 0;
+                }
+            }
+
+            max = Math.max(max, count);
+        }
+
+        return max;
+    }
+
+
+
 
 
 
