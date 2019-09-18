@@ -19,7 +19,7 @@ public class StudentDriver {
         Iterator iterator = arrayList.iterator();
         while(iterator.hasNext()){
             student = (Student) iterator.next();
-            System.out.println(student.age);
+            System.out.println(student.sNo +"-->" +student.name+"--->"+student.age);
         }
 
     }
