@@ -1,6 +1,6 @@
 package org.sai.SamplePackage.HomeTask4.OOPs.FlowerSetUp;
 
-public class RedRoses extends Roses {
+public class RedRoses extends Roses implements BuyFlowers{
 
     private static double totalQuantityOfRoses ;
     private static double costOfOneRose;
@@ -27,13 +27,33 @@ public class RedRoses extends Roses {
     RedRoses(double costOfOneRose, double totalQuantityOfRoses){
         setCostOfOneRose(costOfOneRose);
         setTotalQuantityOfRoses(totalQuantityOfRoses);
-//        System.out.println("Total Red - Roses restored to ::"+getTotalQuantityOfRoses());
-//        System.out.println("Cost of each Red - Rose ::"+getCostOfOneRose());
     }
 
     public RedRoses (){
         System.out.println("Total Red-Roses Avaialble ::"+getTotalQuantityOfRoses());
         System.out.println("Cost of Each Red-Rose ::"+(getCostOfOneRose()));
+    }
+    @Override
+    public void buyFlowers(double flowerQuantity) {
+        if(isAvailable() && flowerQuantity <= getTotalQuantityOfRoses()){
+            setTotalQuantityOfRoses(getTotalQuantityOfRoses()-flowerQuantity);
+            System.out.println("No.of Roses buying::"+flowerQuantity);
+            System.out.println("After buy no.of Roses Left ::"+ getTotalQuantityOfRoses());
+            System.out.println("Price of "+flowerQuantity+" Roses ::"+costOfFlower(flowerQuantity));
+        }
+        else{
+            try {
+                throw new Exception("Stock Not Available");
+            } catch (Exception e) {
+                e.printStackTrace();
+                e.getMessage();
+            }
+        }
+    }
+
+    @Override
+    public void setFlowerPrice(double setFlowerPrice) {
+
     }
 
 

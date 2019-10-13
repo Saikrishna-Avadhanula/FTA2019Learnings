@@ -22,38 +22,33 @@ public class Bouquet {
         boolean orderOn = true;
 
         while(orderOn) {
-            System.out.println("Add Flowers to Bouquet :: \n 1.Rose \n 2.Lilly \n 3.Order Bouquet!");
+            System.out.println("Add Flowers to Bouquet :: \n 1.Black Roses \n 2.Red Roses \n 3.Order Bouquet!");
             scanner = new Scanner(System.in);
             int floNum = Integer.parseInt(scanner.nextLine());
-
+            double qnty;
             switch (floNum) {
                 case 1:
-                    Roses roses = null;
-                    System.out.println("1.Normal Roses \t 2.Red Roses");
-                    int rose = Integer.parseInt(scanner.nextLine());
-                    switch (rose){
-                        case 1:
-                            roses = new Roses();
-                            break;
-                        case 2:
-                            roses = new RedRoses();
-                            break;
-                        default :
-                            break;
-                    }
-//                    Roses roses = new Roses();
+                    Roses roses = new Roses();
                     flowerInfo = new FlowerInfo();
-                    flowerInfo.setFlower("Roses");
+                    flowerInfo.setFlower("Black Roses");
                     System.out.println("Enter the quantity to buy::");
-                    double qnty = Double.parseDouble(scanner.nextLine());
-                    roses.buyRoses(qnty);
+                    qnty = Double.parseDouble(scanner.nextLine());
+                    roses.buyFlowers(qnty);
                     flowerInfo.setQuantity(qnty);
                     flowerInfo.setCost(roses.costOfFlower(roses.costOfFlower(qnty)));
                     flowerInfoList.add(flowerInfo);
 
                     break;
                 case 2:
-
+                    RedRoses redRoses = new RedRoses();
+                    flowerInfo = new FlowerInfo();
+                    flowerInfo.setFlower("Red Roses");
+                    System.out.println("Enter the quantity to buy::");
+                    qnty = Double.parseDouble(scanner.nextLine());
+                    redRoses.buyFlowers(qnty);
+                    flowerInfo.setQuantity(qnty);
+                    flowerInfo.setCost(redRoses.costOfFlower(redRoses.costOfFlower(qnty)));
+                    flowerInfoList.add(flowerInfo);
                     break;
                 case 3:
                     orderOn=false;
