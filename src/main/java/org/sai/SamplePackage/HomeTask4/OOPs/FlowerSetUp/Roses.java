@@ -1,6 +1,6 @@
 package org.sai.SamplePackage.HomeTask4.OOPs.FlowerSetUp;
 
-public class Roses implements Flowers {
+public class Roses implements Flowers,BuyFlowers {
 
 
     private static double totalQuantityOfRoses ;
@@ -52,11 +52,22 @@ public class Roses implements Flowers {
     }
 
     public void buyRoses(double qnty)  {
-        if(isAvailable() && qnty <= getTotalQuantityOfRoses()){
-            setTotalQuantityOfRoses(getTotalQuantityOfRoses()-qnty);
-            System.out.println("No.of Roses buying::"+qnty);
+
+
+    }
+
+    @Override
+    public void setFlowerPrice(double setFlowerPrice) {
+
+    }
+
+    @Override
+    public void buyFlowers(double flowerQuantity) {
+        if(isAvailable() && flowerQuantity <= getTotalQuantityOfRoses()){
+            setTotalQuantityOfRoses(getTotalQuantityOfRoses()-flowerQuantity);
+            System.out.println("No.of Roses buying::"+flowerQuantity);
             System.out.println("After buy no.of Roses Left ::"+ getTotalQuantityOfRoses());
-            System.out.println("Price of "+qnty+" Roses ::"+costOfFlower(qnty));
+            System.out.println("Price of "+flowerQuantity+" Roses ::"+costOfFlower(flowerQuantity));
         }
         else{
             try {
@@ -66,6 +77,5 @@ public class Roses implements Flowers {
                 e.getMessage();
             }
         }
-
     }
 }

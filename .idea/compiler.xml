@@ -6,8 +6,8 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="org.fta2019.learnings" />
         <module name="orgfta2019learnings" />
+        <module name="org.fta2019.learnings" />
       </profile>
     </annotationProcessing>
   </component>
