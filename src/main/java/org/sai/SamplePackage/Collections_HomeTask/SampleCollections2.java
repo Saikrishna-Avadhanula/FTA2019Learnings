@@ -1,4 +1,4 @@
-package org.sai.SamplePackage.Collections;
+package org.sai.SamplePackage.Collections_HomeTask;
 
 import java.util.*;
 
@@ -13,10 +13,8 @@ public class SampleCollections2 {
     LinkedHashSet >>>>> Insertion order no sorting is available
     TreeSet       >>>>> stored in Ascending order, Generics should be given
     HashSet       >>>>> allows nulls
-
-
-
      */
+
     public static void main(String[] args){
 
 
@@ -26,16 +24,16 @@ public class SampleCollections2 {
         TreeSet     treeSet         = new TreeSet();
         HashSet     hashSet         = new HashSet();
 
-//        add(arrayList);
-//        add(linkedList);
-//        add(linkedHashSet);
-//        add(treeSet);
+        add(arrayList);
+        add(linkedList);
+        add(linkedHashSet);
+        add(treeSet);
         add(hashSet);
 
-//        print(arrayList);
-//        print(linkedList);
-//        print(linkedHashSet);
-//        print(treeSet);
+        print(arrayList);
+        print(linkedList);
+        print(linkedHashSet);
+        print(treeSet);
         print(hashSet);
 
     }

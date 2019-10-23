@@ -1,4 +1,4 @@
-package org.sai.SamplePackage.Collections;
+package org.sai.SamplePackage.Collections_HomeTask;
 
 import java.util.*;
 
@@ -6,39 +6,38 @@ public class SampleSortColleections {
 
 
     public static void main( String[] aaargs){
-//        List  list = new ArrayList();
-//
-////        list.add(5);
-////        list.add(4);
-////        list.add(6);
-//        list.add("sai");
-//list.add("krishna");
-//        Collections.sort(list);
-//
-//        for(int i=0; i<list.size(); i++){
-//            System.out.println(list.get(i));
-//        }
-//
-//        List lList= new LinkedList();
-//        lList.add(234);
-//        lList.add(123);
-//        lList.add(234);
-////        lList.add('c');
-////        lList.add("String");
-//
-//        for (Object ob: lList
-//             ) {
-//
-//            System.out.println(ob);
-//        }
-//        Collections.sort(lList);
+        List  list = new ArrayList();
 
-//        Iterator<Integer> integerIterator = lList.listIterator();
-//
-//            while(integerIterator.hasNext()){
-//                System.out.println(integerIterator.next());
-//        }
-//
+//        list.add(5);
+//        list.add(4);
+//        list.add(6);
+        list.add("sai");
+        list.add("krishna");
+        Collections.sort(list);
+
+        for(int i=0; i<list.size(); i++){
+            System.out.println(list.get(i));
+        }
+
+        List lList= new LinkedList();
+        lList.add(234);
+        lList.add(123);
+        lList.add(234);
+//        lList.add('c');
+//        lList.add("String");
+
+        for (Object ob: lList
+             ) {
+            System.out.println(ob);
+        }
+        Collections.sort(list);
+
+        Iterator<Integer> integerIterator = lList.listIterator();
+
+            while(integerIterator.hasNext()){
+                System.out.println(integerIterator.next());
+        }
+
 //            HashSet hs = new HashSet();
 
         LinkedList alist = new LinkedList();

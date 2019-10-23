@@ -1,11 +1,12 @@
 package org.sai.SamplePackage.HomeTask3;
 
-import java.lang.reflect.Array;
+import TestBase.LoggerBase;
+
 import java.util.ArrayList;
 
-public class ArrayStringsTask {
+public class ArrayStringsTask extends LoggerBase {
 /*
-    Collections:
+    Collections_HomeTask:
             1. Write a program to find the missing number in integer array of 1 to 100 - 5 marks
             2. Write a program to find biggest and smallest number in a array.- 5 marks
 
@@ -18,7 +19,7 @@ public class ArrayStringsTask {
         ArrayStringsTask arrayStringsTask=new ArrayStringsTask();
         int[] num={1,2,3,4,6,7,8,9};
         int missingnum = arrayStringsTask.findMissingNuminArray(num,1);
-        System.out.println("Missing Number: "+missingnum);
+        LoggerBase.info("Missing Number: "+missingnum);
         arrayStringsTask.findMinMaxNumInArray(num);
         arrayStringsTask.printDuplicateCharInString("saikrishna");
     }
@@ -40,7 +41,8 @@ public class ArrayStringsTask {
     }
 
     public void findMinMaxNumInArray(int[] number){
-        int min = number[0],max = number[0];
+        int min = number[0];
+        int max = number[0];
         for(int i=1; i< number.length; i++){
             if(number[i] < min){
                 min = number[i];
@@ -49,7 +51,7 @@ public class ArrayStringsTask {
                 max = number[i];
             }
         }
-        System.out.println("Max Num = "+max+ " Min Num = "+min);
+        LoggerBase.info("Max Num = "+max+ " Min Num = "+min);
 
 
     }
@@ -58,10 +60,10 @@ public class ArrayStringsTask {
         if(!string.isEmpty()){
             char[] str = string.toCharArray();
             ArrayList<Character> charList = new ArrayList<Character>();
-            System.out.println("Duplicate chars in array: ");
+            LoggerBase.info("Duplicate chars in array: ");
             for (char ele: str)
                 if(charList.contains(ele))
-                    System.out.print(ele+"\t");
+                    LoggerBase.info(ele+"\t");
                 else
                     charList.add(ele);
         }
@@ -69,6 +71,7 @@ public class ArrayStringsTask {
     }
 
     public void checkPalindrome(){
-
+        //write code here
+        throw new UnsupportedOperationException();
     }
 }

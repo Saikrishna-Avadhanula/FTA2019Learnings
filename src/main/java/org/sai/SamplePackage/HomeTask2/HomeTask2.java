@@ -1,6 +1,8 @@
 package org.sai.SamplePackage.HomeTask2;
 
-public class HomeTask2 {
+import TestBase.LoggerBase;
+
+public class HomeTask2 extends LoggerBase {
 
     public String helloUser(String user){
         String output=null;
@@ -8,7 +10,7 @@ public class HomeTask2 {
             output = "HELLO! "+ user;
         }
         catch(Exception e){
-            System.out.println(e.getStackTrace());
+            LoggerBase.info(e.getStackTrace());
         }
         return output;
     }

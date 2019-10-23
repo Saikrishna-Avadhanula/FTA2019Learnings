@@ -15,11 +15,10 @@ public class HomeTask1 extends LoggerBase{
       int result = 0;
     try{
       result = dApples+aApples;
-        System.out.println(result);
-        logger.info("Result::"+result);
+        LoggerBase.info("Result::"+result);
      }
     catch(Exception ex){
-        System.out.println(ex.getStackTrace());
+        LoggerBase.info(ex.getStackTrace());
         }
         return result;
     }
@@ -30,7 +29,7 @@ public class HomeTask1 extends LoggerBase{
             result = dApples+aApples;
         }
         catch(Exception ex){
-            System.out.println(ex.getStackTrace());
+            LoggerBase.info(ex.getStackTrace());
         }
         return result;
     }

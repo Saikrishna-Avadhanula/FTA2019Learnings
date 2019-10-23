@@ -1,14 +1,14 @@
-package org.sai.SamplePackage.Collections;
+package org.sai.SamplePackage.Collections_HomeTask;
+
+import TestBase.LoggerBase;
 
 import java.util.ArrayList;
 
-public class CollectionsLearnings {
+public class CollectionsLearnings extends LoggerBase {
 
     public static void main(String[] args){
         CollectionsLearnings collectionsLearnings = new CollectionsLearnings();
         collectionsLearnings.ArrayListLearn();
-
-
 
     }
 
@@ -45,12 +45,12 @@ public class CollectionsLearnings {
         list.clear();
         list.add("List1");
         list.add(list.size(),24);
-//        for( int i= list.size()-1; i>=0 ; i--){
-//            System.out.println(list.get(i));
-//        }
-//        for( int i= list2.size()-1; i>=0 ; i--){
-//            System.out.println(list2.get(i));
-//        }
+        for( int i= list.size()-1; i>=0 ; i--){
+            System.out.println(list.get(i));
+        }
+        for( int i= list2.size()-1; i>=0 ; i--){
+            System.out.println(list2.get(i));
+        }
 
 
 
